@@ -17,8 +17,16 @@
     <packaging>pom</packaging>
 
     <name>itoken-dependencies</name>
-    <url>https://github.com/draperstudio/itoken-dependencies</url>
+    <url>https://github.com/itokenstudio/itoken-dependencies</url>
     <inceptionYear>2019-Now</inceptionYear>
+
+    <developers>
+        <developer>
+            <id>draper</id>
+            <name>Draper HXY</name>
+            <email>draper.hxy@gmail.com</email>
+        </developer>
+    </developers>
 
     <properties>
         <!-- Environment Settings -->
@@ -114,9 +122,16 @@
                 <version>${druid.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.springframework.security.oauth</groupId>
+                <artifactId>spring-security-oauth2</artifactId>
+                <version>2.3.3.RELEASE</version>
+            </dependency>
+            <dependency>
                 <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-oauth2</artifactId>
-                <version>2.1.0.RELEASE</version>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>0.9.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -233,6 +248,11 @@
                         </excludes>
                     </configuration>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>2.5.3</version>
+                </plugin>
             </plugins>
         </pluginManagement>
 
@@ -286,4 +306,11 @@
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
         </pluginRepository>
     </pluginRepositories>
+
+
+    <scm>
+        <connection>scm:git@github.com:itokenStudio/itoken-dependencies.git</connection>
+        <url>http://github.com/itokenStudio/itoken-dependencies</url>
+        <developerConnection>scm:git:https://repo.rdc.aliyun.com/repository/68342-release-nXvimq</developerConnection>
+    </scm>
 </project>
